@@ -1,6 +1,6 @@
 %%%%%Präambel%%%%%
 %Document Style/Page Style
-\documentclass[12pt,a4paper]{article}%Schriftgröße, Papierformat einstellen
+\documentclass[12pt,a4paper]{report}%Schriftgröße, Papierformat einstellen
 %\documentclass{scrbook}
 \usepackage[top=20mm,bottom=20mm,left=20mm,right=20mm]{geometry}
 \usepackage{lipsum}
@@ -64,6 +64,46 @@
 %\usepackage[round]{natbib}
 %\usepackage{hyperref}
 
+%Tikz Packages
+% Tikz dsp
+\usepackage{tikz}
+%\usepackage{verbatim}
+%\usepackage[active,tightpage]{preview}
+%\PreviewEnvironment{tikzpicture}
+%\setlength{\PreviewBorder}{10pt}%
+\usetikzlibrary{dsp,chains}
+\DeclareMathAlphabet{\mathpzc}{OT1}{pzc}{m}{it}
+\newcommand{\z}{\mathpzc{z}}
+%tikz tobi
+\usepackage[siunitx, european, americaninductors]{circuitikz}
+\usepackage{tkz-euclide} %for easy coordinate system
+\usepackage{pgfplots} %alternative for complicate coordinate
+\usetikzlibrary{arrows.meta}%alternative for complicate coordinate
+\usetikzlibrary{decorations.pathreplacing}
+\usetikzlibrary{arrows}
+\usetikzlibrary{automata}
+\usetikzlibrary{backgrounds}
+\usetikzlibrary{calc}
+\usetikzlibrary{calendar}
+\usetikzlibrary{er}
+\usetikzlibrary{intersections}
+\usetikzlibrary{mindmap}
+\usetikzlibrary{folding}
+\usetikzlibrary{patterns}
+\usetikzlibrary{plothandlers}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{shapes}
+\usetikzlibrary{snakes}
+\usetikzlibrary{topaths}
+\usetikzlibrary{trees}
+%\tikzset{
+%>=stealth',
+%help lines/ .style={dashed, thick},
+%axis/ .style={<->},
+%important line/ .style={thick},
+%connection/ .style={thick, dotted},
+%}
+
 %Inhaltsverzeichnis mit Links erstellen
 \usepackage[colorlinks,
 pdfpagelabels,
@@ -123,7 +163,7 @@ citecolor = black] {hyperref}
 \newpage
 \input{./tex/che/chapter_end.tex}
 
-\nocite{*}
+%\nocite{*}
 \bibliography{./bib/lit}
 
 \end{document}
