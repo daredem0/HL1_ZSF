@@ -1,0 +1,223 @@
+ \section{Licht}
+	\subsection{Röntgenstrahlung}
+	Röntgenstrahlung entsteht, wenn man Elektronen sehr stark durch ein starkes elektrisches Feld ($V \sim 180kV$) beschleunigt in ein Metall schießt. Die Energie muss so stark sein, dass das beschleunigte Elektron in der Lage ist, ein Elektron aus einer inneren Schale eines Atoms zu schiessen. Fällt dann ein Elektron aus dem Fermi-See in die besetzbare Stelle in der Schale sendet es dabei Röntgenstrahlung aus.
+	\newpage
+	\subsection{Welle-Teilchen Dualismus}
+	\begin{figure}[H]
+		\begin{center}
+			\begin{tikzpicture}[scale=1.2]
+			\node at (5,8) {Licht};
+			\draw[black, very thick] (4,7.5) rectangle (6,8.5);
+			
+			\node at (1,6) {Newton};
+			\draw[black, very thick] (0,5.5) rectangle (2,6.5);
+			
+			\node at (9,6) {Huygens};
+			\draw[black, very thick] (8,5.5) rectangle (10,6.5);
+			
+			\draw[-Stealth, thick] (3.8,8) to [bend right = 20] (1,6.7);
+			\draw[-Stealth, thick] (6.2,8) to [bend left = 20] (9,6.7);
+			\end{tikzpicture}
+		\end{center}
+	\end{figure}
+	
+	\begin{minipage}[t]{.5\textwidth}
+	\underline{Teilchen}
+		\begin{itemize}
+			\item Max Planck untersuchte Hohlraumstrahlung bzw. Schwarzkörperstrahlung. Ein schwarzer Körper ist ein Körper, der das gesamte Spektrum absorbiert und genauso auch emittiert. Diese Art von Körper existiert in der Realität nicht, kann aber durch folgendes Experiment genähert werden:
+		\begin{figure}[H]
+			\begin{center}
+				\begin{tikzpicture}[thick,scale=0.9, every node/.style={scale=0.9}]
+				\draw[gray, fill, thick] (3,1) rectangle (7,6);
+				\draw[fill, white,  thick] (3.3,1.3) rectangle (6.7,5.7);
+				\draw[black, very thick] (3.3,1.3) rectangle (6.7,5.7);
+				
+				\node at (1.5,7) {black coating};
+				\draw[-Stealth, thick] (2.7,7) to [bend left = 40] (4.2,5.7);
+				
+				\draw[fill, white] (6,4) rectangle (7,5);
+				
+				\draw[-Stealth, teal, very thick] (9,5) to (3.3, 3.5);
+				\draw[-Stealth, teal, very thick] (3.3, 3.5) to (6.7, 2.5);
+				\draw[-Stealth, teal, very thick] (6.7, 2.5) to (3.3, 1.5);
+				\draw[-Stealth, teal, very thick] (3.3, 1.5) to (4, 1.3);
+				\draw[-, teal, dashed, very thick] (4, 1.3) to (6.3, 1.9);
+				
+				\draw[black, ultra thick](3.5,6.3) circle [radius=0.3];
+				\draw[black, ultra thick](4.5,6.3) circle [radius=0.3];
+				\draw[black, ultra thick](5.5,6.3) circle [radius=0.3];
+				\draw[black, ultra thick](6.5,6.3) circle [radius=0.3];
+				
+				\draw[black, ultra thick](3.5,0.7) circle [radius=0.3];
+				\draw[black, ultra thick](4.5,0.7) circle [radius=0.3];
+				\draw[black, ultra thick](5.5,0.7) circle [radius=0.3];
+				\draw[black, ultra thick](6.5,0.7) circle [radius=0.3];
+				
+				\node at (1,0.5){heater};
+				\draw[-Stealth, thick] (2,0.5) to [bend right = 5] (3.1,0.7);
+				\draw[-Stealth, rounded corners=5mm, thick] (2,0.5)  -| ([xshift=-4mm] (2.7,6) -- (3.2, 6.3);
+				\end{tikzpicture}
+			\end{center}
+		\end{figure}
+		Dazu benötigt man nur eine geschlossene Box mit einer sehr kleinen Öffnung. Die Innenverkleidung muss komplett schwarz sein. Trifft nun ein Photo auf die Öffnung der Box läuft es sich innerhalb der Box tot, unabhängig von der Energie. Damit simuliert man einen schwarzen Körper. Fügt man noch eine Heizung hinzu so emittiert die Box entsprechend weißes Licht. 
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[t]{.5\textwidth}
+	\underline{Welle}
+		\begin{itemize}
+			\item Wellentheorie bestand zunächst weiter da es für Licht kein Ausbreitungsmedium gibt
+			\item Hertz experimentierte mit Maxwell. Sein Spezialgebiet war das Vakuum, in dem sich aufgrund des fehlen der Ladungsdichte folgende Vereinfachung für die Maxwellschen Gesetze:
+			\begin{itemize}
+				\item $\diverg \vec{D} =  0$
+				\item $\rot \vec{E} = 0$
+			\end{itemize}
+			\item So vereinfacht können die Maxwellgleichungen paarweise zu 2 Gleichungen reduziert werden. Man erhält für $\vec{E}$ und $\vec{B}$ folgende Wellengleichung
+			\begin{equation}
+				\lapl \vec{E}(\vec{r},t) = \mu_0 \varepsilon_0 \frac{\partial ^2}{\partial t^2} \vec{E}(\vec{r}, t)
+			\end{equation} \label{eq:e_welle_a}
+			bzw. allgemein:
+			\begin{equation}
+				\lapl \vec{x}(\vec{r},t) = \alpha \frac{\partial ^2}{\partial t^2} \vec{x}(\vec{r}, t)
+			\end{equation}
+			in $\alpha$ ist die Ausbreitungsgeschwindigkeit der Welle codiert und es gilt $\alpha = \frac{1}{v^2}$
+			Setzt man nun ein erhält man für $v$
+			\begin{equation}
+				v_{EMW} = \frac{1}{\sqrt{\varepsilon_0 \mu_0}} = c_0
+			\end{equation}
+			 was den Zusammenhang zwischen Licht und der Welle liefert.  Als Ansatz zur Lösung dient:
+			\begin{equation}
+				\vec{E}(\vec{r}, t) = \vec{E} \cdot  \sin (w t \pm \vec{K} \cdot \vec{r})
+			\end{equation}\label{eq:e_welle_loes}
+		\end{itemize}
+	\end{minipage}
+	
+	\newpage
+	\begin{minipage}[t]{.5\textwidth}
+	\underline{Teilchen}
+		\begin{itemize}
+			\item Das Ergebnis des Experiments war, dass die Hohlraumstrahlung im Rahmen der Maxwellschen Theorie nicht erklärbar ist. Planck stellte fest, dass zur Beschreibung folgende angenommen werden muss, dass das Licht im Hohlraum nur in kleinen Energieportionen der Größe
+		\begin{equation}
+			E = h \cdot f
+		\end{equation}
+		existiert. Misst man die Energie im Hohlraum so erhält man immer ein natürliches Vielfaches dessen. Dies widerspricht Maxwell denn dort müsste gelten
+		\begin{equation}
+			E \sim f^2 \sim I
+		\end{equation}
+		\item Weiter fand und beschrieb Einstein den Photoeffekt. Er fand dabei raus, dass Elektronen nur ab einer gewissen Grenzfrequenz emittiert werden. Die kinetische Enerige mit der sich die Elektronen dann weg bewegen ist direkt abhängig von der eingekoppelten Energie. Diese Beobachtung kann man allerdings nur ab einer gewissen Grenzfrequenz machen. Darunter findet absolut keine Reaktion statt, selbst wenn die Intensität beliebig erhöht wird, was wiederum in Widerspruch zur klassischen Maxwellschen Theorie steht. Einstein führt hierbei das Photon ein für das gilt Intensität $\overset{\wedge}{=}$ Anzahl Photonen. Er stellte sich dabei das Photon als ein diskrete Energiepaket vor, das nur ganz an die Probe übergeben werden kann oder gar nicht.
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[t]{.5\textwidth}
+	\underline{Welle}
+		\begin{itemize}
+			\item Mit dem Wellenvektor $|\vec{K}|$
+			\begin{equation}
+				|\vec{K}| = \frac{2 \pi}{\lambda} = \sqrt{K_x^2 + K_y^2 + K_z^2}, \quad w = 2\pi f
+			\end{equation}
+			erhält man dann 
+			\begin{equation}
+				\frac{1}{\sqrt{\varepsilon_0 \mu_0}} = c_0 = \frac{w}{|\vec{K}|} = \lambda f 
+			\end{equation}\label{eq:c_a}
+			zur Überprüfung:
+			\begin{equation}
+				v = \frac{s}{t} = \frac{\lambda}{T} = \lambda \cdot f\quad \checkmark
+			\end{equation}
+		\end{itemize}
+	\end{minipage}
+	
+	\newpage
+	\begin{minipage}[t]{.5\textwidth}
+		\underline{Teilchen}
+		\begin{itemize}
+			\item Darauf aufbauend beschrieb Louis de Broglie das Photon mit der speziellen Relativitätstheorie und ihrer Energiegleichung
+		\begin{equation}
+		E = mc^2
+		\end{equation}
+		Eine Aussage der speziellen Relativitätstheorie ist, dass die Masse eines Körpers mit der Geschwindigkeit zu nimmt und gegen $\infty$ strebt. Daraus folgt direkt dass ein Körper mit träger Masse nie $c$ erreichen kann. 
+		\begin{equation}
+			m(v) = \displaystyle\frac{m_0}{\sqrt{1-(\frac{v}{c})^2}}
+		\end{equation}
+		mit $p=mv$ erhält man 
+		\begin{equation}
+			E^2 = (pc)^2 + (m_0 c^2)^2
+		\end{equation}
+		Betrachtet man nun Licht als ruhemasseloses Teilchen fällt der zweite Summand weg und man erhält
+		\begin{equation}
+			E_{Photon}^2 = (pc)^2
+		\end{equation}
+		Daraus folgt direkt, dass das Photon einen Impuls haben muss. Dies wurde experimentell beim Compton Effekt nachgewiesen. Dazu beschoss Arthur Compton ein Metall, bzw. den Fermi-Sees eines Metalles mit Röntgenstrahlung. Man beobachtet dabei, dass reflektierte Röntgenstrahlung eine geringere Frequenz als beim Abschuss hatte. Demnach wurde Energie verloren, die bei elastischen Stößen mit Elektronen abgegeben wurde. Demnach musste das Röntgen-Photon einen Impuls haben. Damit erhält man
+		\begin{equation}
+			E = pc
+		\end{equation}
+		De Broglie vereinte letztlich die Ergebnisse der unterschiedlichen Experimente und setze sie in Zusammenhang
+		\begin{equation}
+		E = h\cdot f = p \cdot c ,\; c = h \cdot f  \Rightarrow  p = \frac{hf}{\lambda} = \frac{h}{\lambda}
+		\end{equation} \label{eq_deBrog_a}
+		\end{itemize}
+	\end{minipage}
+	\begin{minipage}[t]{.5\textwidth}
+	$\;$
+	\end{minipage}
+	
+	De Broglie vermutete dann weiterhin, dass diese Dualität auch für Elektronen postuliert werden könnte. Parallel zu de Broglie arbeitete Bohr an seinem Atommodell, dessen drittes Postulat bekannterweiße
+	\begin{equation}
+		mvr = n \frac{h}{2\pi} = n \hbar
+	\end{equation}
+	ist. Mit $p = mv$ und de Broglies Theorie erhält man weiter
+	 \begin{align}
+	 	pr &= n \hbar \qquad ,\; n=1,2,3,... \\
+	 	2\pi r & = n \frac{h}{p}= n \lambda
+	 \end{align}
+	 $2 \pi r$ ist nun der Umfang einer bohrschen Bahn die nach der Erkenntnis ein ganzzahliges Vielfaches von $\lambda$ sein muss. Diese Nebenbedingung tritt immer bei stehenden Wellen auf \newline
+	 $\rightarrow$ Es sind nur die Radien erlaubt, auf denen das Elektron eine stehende Welle einnimmt. mit \eqref{eq:c_a} und \eqref{eq_deBrog_a} erhält man den relativistischen Energiesatz für ruhemasselose Teilchen.
+	 \begin{equation}
+	 	c = \lambda f \overset{p = \frac{h}{f}}{\underset{E = h \cdot f}{\rightarrow}} E = p \cdot c
+	 \end{equation} \label{eq:rel_E_masselos}
+	 Aufbauend auf den vorhergehenden Arbeiten suchte Erwin Schrödinger zunächst nach einer Wellengleichung für das Elektron. Die Wellengleichung des Lichts \eqref{eq:e_welle_a} ist bekannt und wird mit \eqref{eq_deBrog_a} gelöst. Diese Lösung ist allerdings nur dann Lösung, wenn die Parameter der Lösung $\omega$ und $\vec{K}$ mit den Parametern der Differentialgleichung $\varepsilon_0$ und $\mu_0$ über den relativistischen Energiesatz \eqref{eq:rel_E_masselos} verknüpft ist. Mathematisch ausgedrückt bedeutet das, nur wenn die Dispersionsrelation (die Nebenbedingung) gilt, ist \eqref{eq:e_welle_loes} eine Lösung der Differentialgleichung. Physikalisch interpretiert bedeutet das, dass die obere Gleichung ein Phänomen beschreibt, dass in Raum und Zeit durch die Dispersionsrelation beschrieben wird, für die der relativistische Energiesatz für ruhemasselose Teilchen gilt. Das einzig bekannte Objekt das sich so verhält ist Licht mit der Lösung in \eqref{eq:e_welle_loes}. Erwin Schrödinger versuchte die bekannten Ergebnisse dann aufs Elektron zu übertragen.
+	  \newpage
+	  \begin{figure}[H]
+			\begin{center}
+				\begin{tikzpicture}[scale=1.2]
+			\node at (5,8) {Elektron};
+			\draw[black, very thick] (4,7.5) rectangle (6,8.5);					
+			\draw[-Stealth, thick] (3.8,8) to [bend right = 20] (1,6.7);
+			\draw[-Stealth, thick] (6.2,8) to [bend left = 20] (9,6.7);
+				\end{tikzpicture}
+			\end{center}
+		\end{figure}
+\begin{adjustwidth}{-17pt}{-17pt}
+	\begin{minipage}[t]{.3\textwidth}
+	\underline{Teilchen}
+		\begin{align*}
+			E &= E_{kin} + E_{pot} \nonumber \\
+			&= \frac{1}{2}mv^2 + E_{pot} \\ \\
+			\Rightarrow h \cdot f &= \frac{1}{2}\frac{p^2}{m} + E_{pot} \\
+			&= \frac{1}{2}  \frac{h^2}{\lambda^2 m} + E_{pot} \\
+			\omega = 2 \pi f \; |\vec{K}| &= \frac{2 \pi}{\lambda} \; \hbar = \frac{h}{2\pi} \\
+			\hbar \omega &= \frac{1}{2} \frac{\hbar^2 |\vec{K}^2|}{m} + E_{pot}
+		\end{align*}
+		So erhält man den nicht relativistischen Energiesatz für massebehaftete Teilchen, also die Dispersionsrelation die eine Wellengleichung und deren Lösung verknüpft. 
+	\end{minipage}
+	\begin{minipage}[t]{.4\textwidth}
+	\vspace{+4cm}
+		\begin{center}
+			\underline{Verknüpfung von} \\ \underline{Welle und Teilchen}
+			\begin{align*}
+				E &= h \cdot f\\
+				p &= \frac{h}{\lambda}
+			\end{align*}
+		\end{center}
+	\end{minipage}
+	\begin{minipage}[t]{.3\textwidth}
+	\underline{Welle}\\
+	Da weder die Wellengleichung noch die Lösung bekannt ist setzt man den einfachsten Fall, eine ebene Welle ein. Damit ergibt sich die Lösung
+	\begin{equation}
+		\psi (\vec{r}, t) = \psi_0 e^{\displaystyle i(wt \pm \vec{K} \vec{r})}
+	\end{equation}
+	Man kann sich nun die DGL aus der Lösung rekonstruieren. Wir benötigen 3 Terme, einen für eine einfache zeitliche Ableitung für $\omega$, eine zweifache Ableitung nach dem Ort für $\vec{K}$ und einen weiteren für $E_{pot}$ aus der Dispersionsrelation. So ergibt sich:
+	\begin{equation}
+		A \cdot \underbrace{\lapl \psi (\vec{r}, t)}_{\rightarrow K^2} + B \cdot \underbrace{\frac{\partial \psi (\vec{r}, t}{\partial t}}_{\rightarrow \omega} + C \cdot \underbrace{\vec{\psi}}_{E_{pot}} = 0
+	\end{equation}
+	\end{minipage}
+\end{adjustwidth}
+
+\colRed{To-Do: 2 fache räumliche, einfache zeitliche Ableitung bilden und Koeffizienten bestimmen.}
